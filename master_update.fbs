@@ -1,0 +1,8 @@
+namespace logger.flatbuffer;
+
+table MasterUpdate {
+    updateStart:uint;
+    updateEnd:uint;
+}
+
+root_type MasterUpdate;
