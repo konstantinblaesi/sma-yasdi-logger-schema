@@ -1,18 +1,27 @@
 namespace logger.flatbuffer;
 
-table SpotChannel {
+table SpotChannelNumeric {
     name:string;
     value:double;
-    valueText:string;
     unit:string;
-    timestamp:uint (key);
+}
+
+table SpotChannelText {
+    name:string;
+    value:string;
+}
+
+table SpotChannels {
+    timestamp:uint;
+    numeric:[SpotChannelNumeric];
+    text:[SpotChannelText];
 }
 
 table DeviceUpdate {
     name:string;
     type:string;
     serialNumber:uint;
-    spotChannels:[SpotChannel];
+    spotChannels:[SpotChannels];
 }
 
 root_type DeviceUpdate;
